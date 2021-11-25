@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* font-family: 'Poppins', sans-serif; */
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* i.fas.fa-phone-square-alt {
+    color: #ff5722;
+} */
+
+i.fab.fa-facebook-square {
+    color: #1877f2;
+}
+
+i.fab.fa-twitter-square {
+    color: #1da1f2;
+}
+
+i.fab.fa-instagram-square {
+    color: #e1306c;
+}
+
+i.fab.fa-youtube {
+    color: #ff0000;
+}
+
+i.fab.fa-whatsapp-square {
+    color: #25d366;
+}
+
+body{
+    background-image: url("resources/back.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+section.formSec {
+    width: 80%;
+    /* border: 1px solid; */
+    margin: 20px auto;
+    border-radius: 10px;
+    /* padding: 40px 2px 30px 50px; */
+    background: white;
+    box-shadow: 0px 0px 8px 0px #e8e8e8;
+    box-sizing: border-box;
+    padding: 30px 40px;
+}
+
+.topPart {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.topPart h3 {
+    font-size: 30px;
+    margin-bottom: 15px;
+    margin-top: 2px;
+    /* text-decoration: overline; */
+    color: #000000;
+}
+
+.formInfo {
+    font-size: 15px;
+    color: #000000;
+    margin: auto;
+    margin-bottom: 30px;
+    width: max-content;
+    border: 1px solid #f35959;
+    padding: 13px;
+}
+
+form#infoForm label {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 13px;
+}
+
+form#infoForm {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 50% 50%;
+    /* margin-left: 40px; */
+}
+
+form#infoForm > div {
+    margin: 13px 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+form#infoForm input {
+    width: 65%;
+    text-indent: 4px;
+    border: none;
+    border-bottom: 1px solid #80808052;
+    outline: none;
+    font-size: 16px;
+}
+
+select#userSection {
+    width: 65%;
+    padding: 6px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 2px solid #80808052;
+    outline: none;
+}
+
+div.userImgPrev {
+    font-weight: 300;
+    border: 4px dotted gray;
+    text-align: center;
+    justify-content: center;
+    padding: 50px;
+    width: 70%;
+    margin-top: 20px;
+}
+
+.userImg label, .userIDImg label {
+    cursor: pointer;
+}
+.changeBtn {
+    background: red;
+    border: none;
+    outline: none;
+    padding: 6px 15px;
+    width: 22%;
+    color: white;
+    cursor: pointer;
+    font-size: 16px !important;
+}
+
+img.prevImg {
+    max-width: 80%;
+    max-height: 270px;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+
+div#userImgPrevBox {
+    display: none;
+}
+
+div#userIDImgPrevBox {
+    display: none;
+}
+
+sup {
+    color: red;
+    font-size: 13px;
+}
+
+.commInfo {
+    margin-top: 40px !important;
+    grid-column: span 2;
+    color: #000000ab;
+    font-weight: 500;
+}
+
+.iconBox {
+    flex-direction: row !important;
+}
+
+.iconBox label {
+    margin: 0px 10px 0px 0px !important;
+    padding: 0;
+    font-size: 29px !important;
+}
+
+.address {
+    grid-column: 1/span 2;
+}
+
+textarea {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #80808052;
+    max-width: 100%;
+    font-size: 16px;
+    text-indent: 5px;
+}
+
+.submitBtn {
+    grid-column: 1/span 2;
+}
+
+/* focus */
+
+textarea:focus {
+    border-bottom: 1px solid;
+}
+
+form#infoForm input:focus {
+    border-bottom: 1px solid;
+}
+
+input[type="submit"] {
+    width: max-content !important;
+    font-size: 20px !important;
+    background: #ff0000;
+    color: white;
+    padding: 8px 18px;
+    margin: auto;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    box-shadow: 0px 0px 8px 0px #ff0000a3;
+    transition: 0.25s;
+}
+
+input[type="submit"]:hover {
+    box-shadow: none;
+}
+
+.modalBack {
+    min-height: 100vmax;
+    min-width: 100%;
+    position: fixed;
+    top: 0;
+    background: #00000091;
+    z-index: 1;
+    display: none;
+}
+
+.modalText {
+    position: fixed;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    background: white;
+    height: 100px;
+    width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    display: none;
+}

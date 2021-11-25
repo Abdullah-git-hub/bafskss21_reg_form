@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <section class="formSec">
+        <div class="topPart">
+            <h3>Regestration Form</h3>
+            <p>All the students of BAFSK, SSC Batch 2021</p>
+            <p>This will be a Memorial Diary</p>
+        </div>
+        <div class="formInfo">
+            <p>All the information provided here will be added to your diary page.</p>
+            <p>Try to provide verified information only.</p>
+        </div>
+        <form id="infoForm">
+            <div class="fName">
+                <label for="userFullName">Your Fullname <sup>*</sup></label>
+                <input id="userFullName" type="text" required placeholder="Fullname">
+            </div>
+
+            <div class="nName">
+                <label for="userNickName">Your Nickname <sup>*</sup></label>
+                <input id="userNickName" type="text" required placeholder="Nickname">
+            </div>
+
+            <div class="rNum">
+                <label for="userRoll">Your Roll <small>(Must use Three Digits) <sup>*</sup></small></label>
+                <input id="userRoll" type="number" required placeholder="100" min="101" max="999">
+            </div>
+
+            <div class="secName">
+                <label for="userSection">Select Your Section <sup>*</sup></label>
+                <select name="userSection" id="userSection" required>
+                    <option value="Shugondha">Shugondha</option>
+                    <option value="Sheuli">Sheuli</option>
+                    <option value="Shimul">Shimul</option>
+                    <option value="Shurovi">Shurovi</option>
+                    <option value="Shapla">Shapla</option>
+                    <option value="Shaluk">Shaluk</option>
+                    <option value="Satadal">Satadal</option>
+                </select>
+            </div>
+
+            <div class="userImg">
+                <label for="userImg">
+                    <p>Your Image <sup>*</sup></p>
+                    <div id="userImgPlace" class="userImgPrev">Click To Select</div>
+                </label>
+
+                <div id="userImgPrevBox">
+                    <img class="prevImg" src="#" alt="">
+                    <div class="remBtn">
+                        <!-- <button class="fileRem" onclick="userImgFileRemove()">Remove</button> -->
+                        <label for="userImg" class="changeBtn">Change</label>
+                    </div>
+                </div>
+
+                <input id="userImg" type="file" accept=".png, .jpg, .jpeg" required hidden>
+            </div>
+
+            <div class="userIDImg">
+                <label for="userIDImg">
+                    <p>Photo of your last ID card <small>(For Verification) <sup>*</sup></small></p>
+                    <div id="userIDImgPlace" class="userImgPrev">Click To Select</div>
+                </label>
+
+                <div id="userIDImgPrevBox">
+                    <img class="prevImg" src="#" alt="">
+                    <div class="remBtn">
+                        <!-- <button class="fileRem" onclick="userIDImgFileRemove()">Remove</button> -->
+                        <label for="userIDImg" class="changeBtn">Change</label>
+                    </div>
+                </div>
+
+                <input id="userIDImg" type="file" accept=".png, .jpg, .jpeg" required hidden>
+            </div>
+
+            <!-- Communication Info s -->
+            <div class="commInfo">
+                <p>With this information your friend will be able to communicate with you...</p>
+            </div>
+
+            <div class="iconBox">
+                <label for="userPhone"><i class="fas fa-phone-square-alt"></i></label>
+                <input id="userPhone" type="tel" placeholder="Phone Number" required>
+            </div>
+            <div class="iconBox">
+                <label for="userFb"><i class="fab fa-facebook-square"></i></label>
+                <input id="userFb" type="url" placeholder="Facebook ID's Link" required>
+            </div>
+            <div class="iconBox">
+                <label for="userTwt"><i class="fab fa-twitter-square"></i></label>
+                <input id="userTwt" placeholder="Twitter ID's Link" type="url">
+            </div>
+            <div class="iconBox">
+                <label for="userInsta"><i class="fab fa-instagram-square"></i></label>
+                <input id="userInsta" placeholder="Instagram ID's Link" type="url">
+            </div>
+            <div class="iconBox">
+                <label for="userYt"><i class="fab fa-youtube"></i></label>
+                <input id="userYt" placeholder="YouTube channel's Link" type="url">
+            </div>
+            <div class="iconBox">
+                <label for="userWhats"><i class="fab fa-whatsapp-square"></i></label>
+                <input id="userWhats" placeholder="Whatsapp Number" type="number">
+            </div>
+
+            <br>
+            <br>
+
+            <div class="address">
+                <label for="userPresentAdd">Present Address</label>
+                <!-- <input id="userPresentAdd" type="text" placeholder="Where do u live now?"> -->
+                <textarea name="userPresentAdd" id="userPresentAdd" cols="1" rows="1" placeholder="Where do u live now?" required></textarea>
+            </div>
+
+            <br>
+
+            <div class="address">
+                <label for="userBio">Say somthing about yourself...</label>
+                <!-- <input id="userPresentAdd" type="text" placeholder="Where do u live now?"> -->
+                <textarea name="userBio" id="userBio" cols="1" rows="1" placeholder="A short Bio" required></textarea>
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+            <div class="submitBtn">
+                <input type="submit" value="Submit Form">
+            </div>
+            
+        </form>
+    </section>
+
+    <section class="modal">
+        <div class="modalBack"></div>
+        <div class="modalText">
+            <h3>Please Wait, your data is sending to the server...</h3>
+        </div>
+    </section>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyDer0FSTTN4UynkkzwjRByVDq26RxDN8d0",
+            authDomain: "bafskssc21.firebaseapp.com",
+            // databaseURL: "https://live-chat-e64e3-default-rtdb.firebaseio.com",
+            projectId: "bafskssc21",
+            storageBucket: "bafskssc21.appspot.com",
+            messagingSenderId: "219741064124",
+            appId: "1:219741064124:web:abde2613ebb7c4bdbbb9b9"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+        // const provider = new firebase.auth.GoogleAuthProvider();
+        const storage = firebase.storage().ref();
+        // updating db settings
+        db.settings({ timestampsInSnapshots: true });
+
+        // console.log(firebase)
+    </script>
+
+    <script src="form.js"></script>
+</body>
+</html>
